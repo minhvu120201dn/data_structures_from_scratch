@@ -1,6 +1,8 @@
 import linked_list
+import bst
 
 def main():
+    '''Linked List'''
     my_list = linked_list.LinkedList()
 
     my_list.add(47)
@@ -13,31 +15,37 @@ def main():
     print(my_list.find(472003))
     print(my_list.find(47))
 
-    # Removing an element from the list
-    if my_list.remove(30):
-        print("30 removed from the list.")
+    '''myBST'''
+    # Create an instance of BinarySearchTree
+    myBST = bst.BinarySearchTree()
+
+    # Add nodes to the myBST
+    myBST.add(50)
+    myBST.add(30)
+    myBST.add(70)
+    myBST.add(20)
+    myBST.add(40)
+    myBST.add(60)
+    myBST.add(80)
+
+
+    # Try finding a value
+    x = 60
+    if myBST.find(x):
+        print(f"{x} found")
     else:
-        print("30 was not found in the list.")
+        print(f"{x} not found")
 
-    # Checking if the element still exists after removal
-    print("Is 30 in the list after removal?", my_list.find(30))
+    # Remove a node
+    y = 30
+    if myBST.remove(y):
+        print(f"{y} was removed.")
+    else:
+        print(f"{y} was not found")
 
-    # Finding the maximum value in the list
-    print("The maximum value in the list is:", my_list.findMax())
-
-    # Printing the current length of the list after removal
-    print("Current length of the list:", len(my_list))
-
-    # Adding more elements to the list
-    my_list.add(60)
-    my_list.add(70)
-
-    # Finding the new maximum value in the list
-    print("New maximum value in the list:", my_list.findMax())
-
-    # Printing the current length of the list after adding more elements
-    print("Updated length of the list:", len(my_list))
-
+    # Find the maximum value in the myBST
+    z = myBST.findMax()
+    print(f"{z}")
 
 if __name__ == "__main__":
     main()
