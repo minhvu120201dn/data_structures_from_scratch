@@ -36,7 +36,7 @@ class BinarySearchTree:
                 node.left = Node(value)
             else:
                 self._add(value, node.left)
-                
+
         # Opposite with above
         else:
             if node.right is None:
@@ -46,7 +46,7 @@ class BinarySearchTree:
 
     def remove(self, value: int) -> bool:
         # Remove a value from the BST
-        self.root, deleted = self._remove(self.root, value)
+        deleted = self._remove(self.root, value)
         if deleted:
             self.size -= 1
         return deleted
@@ -55,19 +55,19 @@ class BinarySearchTree:
         if node is None:
             return node, False
         if value < node.value:
-            node.left, deleted = self._remove(node.left, value)
+            deleted = self._remove(node.left, value)
         elif value > node.value:
-            node.right, deleted = self._remove(node.right, value)
+            deleted = self._remove(node.right, value)
         else:
             if node.left is None:
-                return node.right, True
+                return True
             elif node.right is None:
-                return node.left, True
+                return True
             temp = self._findMin(node.right).value
             node.value = temp
-            node.right, _ = self._remove(node.right, temp)
+            _ = self._remove(node.right, temp)
             return node, True
-        return node, deleted
+        return deleted
 
     def find(self, value: int) -> bool:
         # Find a value in the BST
