@@ -1,13 +1,15 @@
 from data_structure import DataStructure
 
-class Node:
 
-    # Initialize the node with a value, and its next node, the default is none
-    def __init__(self, value=None):
-        self.value = value
-        self.next = None
 
 class LinkedList:
+    class Node:
+
+        # Initialize the node with a value, and its next node, the default is none
+        def __init__(self, value=None):
+            self.value = value
+            self.next = None
+    
     def __init__(self):
 
         # Initialize a single Linked List, with the default size is 0, it will increase whenever there is a new node
@@ -19,7 +21,7 @@ class LinkedList:
 
     def add(self, value: int) -> None:
         # Create new node with head = None
-        newNode = Node(value)
+        newNode = LinkedList.Node(value)
 
         # If this node is the first node
         if not self.head:
