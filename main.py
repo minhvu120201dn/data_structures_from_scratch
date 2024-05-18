@@ -81,6 +81,8 @@ def main():
     myHeap.add(47)
     myHeap.removeMax()
     print(myHeap)
+    print(myHeap.find(47))
+    print(myHeap.find(4))
 
 
 if __name__ == "__main__":

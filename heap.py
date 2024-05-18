@@ -80,8 +80,10 @@ class Heap(DataStructure):
         return root
 
     def find(self, value:int) -> bool:
-        #TODO
-        pass
+        for item in self.arr:
+            if item == value:
+                return True
+        return False
 
     def findMax(self) -> int:
         return self.arr[0]
