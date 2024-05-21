@@ -79,7 +79,7 @@ def main():
     myHeap.add(23)
     myHeap.add(25)
     myHeap.add(47)
-    myHeap.removeMax()
+    # myHeap.removeMax()
     print(myHeap)
     print(myHeap.find(47))
     print(myHeap.find(4))
