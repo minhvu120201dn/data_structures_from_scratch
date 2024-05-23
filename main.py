@@ -1,6 +1,7 @@
 import linked_list
 import bst
 import heap
+import avl
 
 def subsetsRecursive(s):
     def recurse(current, index):
@@ -84,6 +85,45 @@ def main():
     print(myHeap.find(47))
     print(myHeap.find(4))
 
+    '''AVL'''
+ # Create an instance of the AVL tree
+    avl_tree = avl.AVLTree()
+
+    # Insert elements into the AVL tree
+    elements_to_add = [10, 20, 5, 4, 15, 25]
+    print("Inserting elements:")
+    for elem in elements_to_add:
+        avl_tree.add(elem)
+        print(f"Added {elem}, current length: {len(avl_tree)}")
+
+    # Print the tree height
+    print(f"Tree height after insertions: {avl_tree.getHeight(avl_tree.root)}")
+
+    # Check if elements exist in the tree
+    print("Checking existence of elements:")
+    elements_to_find = [10, 5, 30]
+    for elem in elements_to_find:
+        found = avl_tree.find(elem)
+        print(f"Element {elem} found: {found}")
+
+    # Find the maximum value in the tree
+    max_value = avl_tree.findMax()
+    print(f"Maximum value in the tree: {max_value}")
+
+    # Remove an element from the tree
+    element_to_remove = 20
+    removed = avl_tree.remove(element_to_remove)
+    print(f"Removed {element_to_remove}: {removed}")
+
+    # Print the tree height after removal
+    print(f"Tree height after removal of {element_to_remove}: {avl_tree.getHeight(avl_tree.root)}")
+
+    # Check the length of the tree after removal
+    print(f"Current length of the tree: {len(avl_tree)}")
+
+    # Check if the removed element still exists in the tree
+    found = avl_tree.find(element_to_remove)
+    print(f"Element {element_to_remove} found after removal: {found}")
 
 if __name__ == "__main__":
     main()
