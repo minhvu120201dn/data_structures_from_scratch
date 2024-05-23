@@ -146,3 +146,11 @@ class AVLTree(DataStructure):
             current = current.left
         return current
 
+    def findMax(self) -> int:
+        def find_max_value(node: Node) -> int:
+            current = node
+            while current.right:
+                current = current.right
+            return current.value
+        
+        return find_max_value(self.root)
